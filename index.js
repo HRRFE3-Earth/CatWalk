@@ -62,7 +62,4 @@ app.all('/qa/*', (req, res, next) => {
     .catch((err) => res.send(err));
 });
 
-// questions: http://18.118.207.43
-
-
 
