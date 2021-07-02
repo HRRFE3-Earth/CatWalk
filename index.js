@@ -20,10 +20,11 @@ app.listen(PORT, (error) => {
 
 //Initial commit to refactor front-end
 
-app.all('/*', (req, res, next) => {
+// reviews
+app.all('/reviews/*', (req, res, next) => {
   axios({
     method: req.method,
-    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe' + req.url,
+    url: 'http://18.118.119.85' + req.url,
     headers: {
       Authorization: GIT_TOKEN
     },
@@ -32,3 +33,36 @@ app.all('/*', (req, res, next) => {
     .then((response) => res.send(response.data))
     .catch((err) => res.send(err));
 });
+
+// overview
+app.all('/products/*', (req, res, next) => {
+  axios({
+    method: req.method,
+    url: 'http://18.118.254.96' + req.url,
+    headers: {
+      Authorization: GIT_TOKEN
+    },
+    data: req.body
+  })
+    .then((response) => res.send(response.data))
+    .catch((err) => res.send(err));
+});
+
+// questions
+app.all('/qa/*', (req, res, next) => {
+  axios({
+    method: req.method,
+    url: 'http://18.118.207.43' + req.url,
+    headers: {
+      Authorization: GIT_TOKEN
+    },
+    data: req.body
+  })
+    .then((response) => res.send(response.data))
+    .catch((err) => res.send(err));
+});
+
+// questions: http://18.118.207.43
+
+
+
