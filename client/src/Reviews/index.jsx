@@ -21,7 +21,7 @@ const Reviews = ({ product, meta, averageRating, totalReviews, setDateFormat }) 
   const theme = useContext(Theme);
 
   const getReviews = (id) => {
-    axios.get(`/reviews?count=100&sort=relevant&product_id=${id}`)
+    axios.get(`/reviews/?product_id=${id}`)
       .then((results) => {
         let newReviews = results.data.results;
         setDateFormat(newReviews);

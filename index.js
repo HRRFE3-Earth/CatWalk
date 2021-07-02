@@ -22,7 +22,6 @@ app.listen(PORT, (error) => {
 
 // reviews
 app.all('/reviews/*', (req, res, next) => {
-  console.log(req.url);
   axios({
     method: req.method,
     url: 'http://18.118.119.85' + req.url,
@@ -53,7 +52,7 @@ app.all('/products/*', (req, res, next) => {
 app.all('/qa/*', (req, res, next) => {
   axios({
     method: req.method,
-    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe' + req.url,
+    url: 'http://18.118.207.43' + req.url,
     headers: {
       Authorization: GIT_TOKEN
     },
@@ -62,3 +61,5 @@ app.all('/qa/*', (req, res, next) => {
     .then((response) => res.send(response.data))
     .catch((err) => res.send(err));
 });
+
+
