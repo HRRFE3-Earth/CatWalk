@@ -18,6 +18,8 @@ app.listen(PORT, (error) => {
   }
 });
 
+//Initial commit to refactor front-end
+
 app.all('/*', (req, res, next) => {
   axios({
     method: req.method,
